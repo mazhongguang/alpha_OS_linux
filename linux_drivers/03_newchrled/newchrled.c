@@ -1,3 +1,4 @@
+#include "linux/err.h"
 #include <linux/compiler.h>
 #include <linux/init.h>
 #include <linux/kdev_t.h>
@@ -13,7 +14,7 @@
 #include <linux/uaccess.h>
 #include <linux/io.h>
 #include <linux/cdev.h>
-
+#include <linux/device.h>
 
 #define NEWCHRLED_NAME "newchrled"
 #define NEWCHRLED_COUNT 1
@@ -65,17 +66,21 @@ struct newchrled_dev
 	dev_t devid;	/* 设备号 */
 	int major;		/* 主设备号 */
 	int minor;		/* 次设备号 */
+	struct class *class; /* 类 */
+	struct device *device; /* 设备 */
 };
 
 struct newchrled_dev newchrled; /* led device */
 
 static int newchrled_open(struct inode *inode, struct file *filp)
 {
+	filp->private_data = &newchrled;
 	return 0;
 }
 
 static int newchrled_release(struct inode *inode, struct file *filp)
 {
+	struct newchrled_dev *dev = (struct newchrled_dev *)filp->private_data;
 	return 0;
 }
 
@@ -138,6 +143,8 @@ static int __init newchrled_init(void)
 	val |= 1 << 3;
 	writel(val, GPIO1_DR);
 
+	/* 设置为0,表示由系统申请设备号 */
+	newchrled.major = 0;
 	/* 2. register char device */
 	if (newchrled.major)
 	{
@@ -154,7 +161,7 @@ static int __init newchrled_init(void)
 	if (ret < 0)
 	{
 		printk("newchrled chrdev_region err!\r\n");
-		return -1;
+		goto fail_devid;
 	}
 	printk("newchrled major=%d, minor=%d\r\n", newchrled.major, newchrled.minor);
 
@@ -162,14 +169,44 @@ static int __init newchrled_init(void)
 	newchrled.cdev.owner = THIS_MODULE;
 	cdev_init(&newchrled.cdev, &newchrled_fops);
 	ret = cdev_add(&newchrled.cdev, newchrled.devid, NEWCHRLED_COUNT);
+	if (ret < 0)
+	{
+		goto fail_cdev;
+	}
+
+	/* 4. 自动创建设备节点 */
+	newchrled.class = class_create(THIS_MODULE, NEWCHRLED_NAME);
+	if (IS_ERR(newchrled.class))
+	{
+		ret = PTR_ERR(newchrled.class);
+		goto fail_class;
+	}
+
+	newchrled.device = device_create(newchrled.class, NULL, newchrled.devid, NULL, NEWCHRLED_NAME);
+	if (IS_ERR(newchrled.device))
+	{
+		ret = PTR_ERR(newchrled.device);
+		goto fail_device;
+	}
 
 	return 0;
+
+fail_device:
+	class_destroy(newchrled.class);
+fail_class:
+	cdev_del(&newchrled.cdev);
+fail_cdev:
+	unregister_chrdev_region(newchrled.devid, NEWCHRLED_COUNT);
+fail_devid:
+	return ret;
 }
 
 /* exit */
 static void __exit newchrled_exit(void)
 {
 	unsigned int val = 0;
+
+	/* 1.LED初始化 */
 	val = readl(GPIO1_DR);
 	/* bit3 set, turn off led */
 	val |= 1 << 3;
@@ -182,11 +219,17 @@ static void __exit newchrled_exit(void)
 	iounmap(GPIO1_DR);
 	iounmap(GPIO1_GDIR);
 
-	/* delete char device */
+	/* 2.delete char device */
 	cdev_del(&newchrled.cdev);
 
-	/* unregister device */
+	/* 3.unregister device */
 	unregister_chrdev_region(newchrled.devid, NEWCHRLED_COUNT);
+	
+	/* 4. 摧毁设备 */
+	device_destroy(newchrled.class, newchrled.devid);
+
+	/* 5.摧毁类 */
+	class_destroy(newchrled.class);
 }
 
 /* 注册和卸载驱动 */
