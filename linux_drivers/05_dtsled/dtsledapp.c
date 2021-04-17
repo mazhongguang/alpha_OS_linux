@@ -13,15 +13,15 @@
  * @param argc 应用程序参数个数
  * @param argv[] 具体的参数内容，字符串形式
  * ./app <filename> <0:1> 0->led off,1-> LED ON
- * ./app /dev/led 0 led off 
- * ./app /dev/led 1 led on
+ * ./app /dev/dtsled 0 led off 
+ * ./app /dev/dtsled 1 led on
  */
 int main(int argc, char *argv[])
 {
 	int ret = 0;
 	int fd = 0;
 	char *filename;
-	unsigned char *databuf[1];
+	unsigned char databuf[1];
 
 	if(argc != 3)
 	{
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	}
 
 	/* 字符形式转换为数字形式 */
-	databuf[0] = atoi(argv[2]);
+	databuf[0] = (unsigned char)atoi(argv[2]);
 	ret = write(fd, databuf, sizeof(databuf));
 	if (ret < 0)
 	{

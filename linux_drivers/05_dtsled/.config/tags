@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUILD_DIR	Makefile	/^BUILD_DIR := build$/;"	m
+CC	Makefile	/^CC := arm-linux-gnueabihf-gcc$/;"	m
+CURRENT_PATH	Makefile	/^CURRENT_PATH := $(shell pwd)$/;"	m
+DTSLED_CNT	dtsled.c	30;"	d	file:
+DTSLED_NAME	dtsled.c	31;"	d	file:
+GPIO1_DR	dtsled.c	/^ static void __iomem *GPIO1_DR;$/;"	v	file:
+GPIO1_GDIR	dtsled.c	/^ static void __iomem *GPIO1_GDIR;$/;"	v	file:
+IMX6U_CCM_CCGR1	dtsled.c	/^ static void __iomem *IMX6U_CCM_CCGR1;$/;"	v	file:
+KERNELDIR	Makefile	/^KERNELDIR := \/home\/user\/linux\/IMX6ULL\/linux\/linux_nxp_mine$/;"	m
+LEDOFF	dtsled.c	34;"	d	file:
+LEDOFF	dtsledapp.c	10;"	d	file:
+LEDON	dtsled.c	33;"	d	file:
+LEDON	dtsledapp.c	9;"	d	file:
+SW_MUX_GPIO1_IO03	dtsled.c	/^ static void __iomem *SW_MUX_GPIO1_IO03;$/;"	v	file:
+SW_PAD_GPIO1_IO03	dtsled.c	/^ static void __iomem *SW_PAD_GPIO1_IO03;$/;"	v	file:
+TARGET	Makefile	/^TARGET = dtsled$/;"	m
+__this_module	build/dtsled.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__this_module	dtsled.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__used	build/dtsled.mod.c	/^__used$/;"	v	file:
+__used	build/dtsled.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+__used	dtsled.mod.c	/^__used$/;"	v	file:
+__used	dtsled.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+cdev	dtsled.c	/^	struct cdev cdev;	\/* 字符设备 *\/$/;"	m	struct:dtsled_dev	typeref:struct:dtsled_dev::cdev	file:
+class	dtsled.c	/^	struct class *class; \/* 类 *\/$/;"	m	struct:dtsled_dev	typeref:struct:dtsled_dev::class	file:
+device	dtsled.c	/^	struct device *device; \/* 设备 *\/$/;"	m	struct:dtsled_dev	typeref:struct:dtsled_dev::device	file:
+devid	dtsled.c	/^	dev_t devid;	\/* device number *\/$/;"	m	struct:dtsled_dev	file:
+dtsled	dtsled.c	/^struct dtsled_dev dtsled;$/;"	v	typeref:struct:dtsled_dev
+dtsled_dev	dtsled.c	/^struct dtsled_dev$/;"	s	file:
+dtsled_exit	dtsled.c	/^module_exit(dtsled_exit);$/;"	v
+dtsled_exit	dtsled.c	/^static void __exit dtsled_exit(void)$/;"	f	file:
+dtsled_fops	dtsled.c	/^static const struct file_operations dtsled_fops = {$/;"	v	typeref:struct:file_operations	file:
+dtsled_init	dtsled.c	/^module_init(dtsled_init);$/;"	v
+dtsled_init	dtsled.c	/^static int __init dtsled_init(void)$/;"	f	file:
+dtsled_open	dtsled.c	/^static int dtsled_open(struct inode *inode, struct file *filp)$/;"	f	file:
+dtsled_release	dtsled.c	/^static int dtsled_release(struct inode *inode, struct file *filp)$/;"	f	file:
+dtsled_write	dtsled.c	/^static int dtsled_write(struct file *filp, const char __user *buf, size_t count, loff_t *ppos)$/;"	f	file:
+flag	.config/ycm_flag.py	/^flag = [ $/;"	v
+led_switch	dtsled.c	/^static void led_switch(uint8_t sta)$/;"	f	file:
+main	dtsledapp.c	/^int main(int argc, char *argv[])$/;"	f
+major	dtsled.c	/^	int major;		\/* main device number *\/$/;"	m	struct:dtsled_dev	file:
+minor	dtsled.c	/^	int minor;$/;"	m	struct:dtsled_dev	file:
+nd	dtsled.c	/^	struct device_node *nd; \/* 设备节点 *\/$/;"	m	struct:dtsled_dev	typeref:struct:dtsled_dev::device_node	file:
+obj-m	Makefile	/^obj-m := $(TARGET).o$/;"	m
+ycm_flags	.config/config_mk.py	/^ycm_flags = [$/;"	v

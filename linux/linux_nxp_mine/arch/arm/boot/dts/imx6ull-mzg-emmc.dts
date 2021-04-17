@@ -150,6 +150,7 @@
 	alphaled {
 		#address-cells = <1>;
 		#size-cells = <1>;
+		compatible = "myself,alphaled";
 		status = "okay";
 		reg = < 0x020C406C 0x04 /* CCM_CCGR1_BASE */
 				0X020E0068 0x04	/* SW_MUX_GPIO1_IO03_BASE */

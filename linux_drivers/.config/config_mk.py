@@ -7,6 +7,8 @@ ycm_flags = [
         '/home/user/linux/IMX6ULL/linux/linux_nxp_mine/include',
         '/home/user/linux/IMX6ULL/linux/linux_nxp_mine/arch/arm/include',
         '/home/user/linux/IMX6ULL/linux/linux_nxp_mine/arch/arm/include/generated',
+        '/usr/include/x86_64-linux-gnu/asm',
+        '/usr/include/x86_64-linux-gnu/sys',
         ]
 # 生成YCM配置文件需要添加的头文件列表
 with open('ycm_flag.py','w') as ycm_flag_file :
