@@ -1,0 +1,35 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUILD_DIR	Makefile	/^BUILD_DIR := build$/;"	m
+CC	Makefile	/^CC := arm-linux-gnueabihf-gcc$/;"	m
+CURRENT_PATH	Makefile	/^CURRENT_PATH := $(shell pwd)$/;"	m
+GPIOLED_CNT	gpioled.c	31;"	d	file:
+GPIOLED_NAME	gpioled.c	32;"	d	file:
+KERNELDIR	Makefile	/^KERNELDIR := \/home\/user\/linux\/IMX6ULL\/linux\/linux_nxp_mine$/;"	m
+LEDOFF	gpioledapp.c	10;"	d	file:
+LEDON	gpioledapp.c	9;"	d	file:
+TARGET	Makefile	/^TARGET = gpioled$/;"	m
+__this_module	build/gpioled.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__used	build/gpioled.mod.c	/^__used$/;"	v	file:
+__used	build/gpioled.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+cdev	gpioled.c	/^	struct cdev cdev;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::cdev	file:
+class	gpioled.c	/^	struct class *class;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::class	file:
+device	gpioled.c	/^	struct device *device;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::device	file:
+devid	gpioled.c	/^	dev_t devid;$/;"	m	struct:gpioled_dev	file:
+flag	.config/ycm_flag.py	/^flag = [ $/;"	v
+gpioled	gpioled.c	/^struct gpioled_dev gpioled;$/;"	v	typeref:struct:gpioled_dev
+gpioled_dev	gpioled.c	/^struct gpioled_dev$/;"	s	file:
+led_exit	gpioled.c	/^module_exit(led_exit);$/;"	v
+led_exit	gpioled.c	/^static void __exit led_exit(void)$/;"	f	file:
+led_fops	gpioled.c	/^static const struct file_operations led_fops = {$/;"	v	typeref:struct:file_operations	file:
+led_init	gpioled.c	/^module_init(led_init);$/;"	v
+led_init	gpioled.c	/^static int __init led_init(void)$/;"	f	file:
+main	gpioledapp.c	/^int main(int argc, char *argv[])$/;"	f
+major	gpioled.c	/^	int major;$/;"	m	struct:gpioled_dev	file:
+minor	gpioled.c	/^	int minor;$/;"	m	struct:gpioled_dev	file:
+obj-m	Makefile	/^obj-m := $(TARGET).o$/;"	m
+ycm_flags	.config/config_mk.py	/^ycm_flags = [$/;"	v
