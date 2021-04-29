@@ -168,6 +168,16 @@
 		status = "okay";
 	};
 
+	/* mazhongguang beep 2021/04/28 */
+	beep 
+	{
+		compatible = "myself, beep";
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_beep>;
+		beep-gpios = <&gpio5 1 GPIO_ACTIVE_HIGH>;
+		status = "okay";
+	};
+
 };
 
 &cpu0 {
@@ -321,6 +331,15 @@
 			{
 				fsl,pins = <
 							MX6UL_PAD_GPIO1_IO03__GPIO1_IO03 0x10B0 /* GPIOLED */
+							>;
+			};
+
+/* mazhongguang 2021/04/27 */
+		pinctrl_beep: 
+			beepgrp
+			{
+				fsl,pins = <
+							MX6UL_PAD_SNVS_TAMPER1__GPIO5_IO01 0x10B0 /* GPIOLED */
 							>;
 			};
 

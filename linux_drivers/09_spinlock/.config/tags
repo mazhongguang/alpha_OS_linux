@@ -1,0 +1,43 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUILD_DIR	Makefile	/^BUILD_DIR := build$/;"	m
+CC	Makefile	/^CC := arm-linux-gnueabihf-gcc$/;"	m
+CURRENT_PATH	Makefile	/^CURRENT_PATH := $(shell pwd)$/;"	m
+GPIOLED_CNT	atomic.c	34;"	d	file:
+GPIOLED_NAME	atomic.c	35;"	d	file:
+KERNELDIR	Makefile	/^KERNELDIR := \/home\/user\/linux\/IMX6ULL\/linux\/linux_nxp_mine$/;"	m
+LEDOFF	atomic.c	37;"	d	file:
+LEDOFF	gpioledapp.c	10;"	d	file:
+LEDON	atomic.c	38;"	d	file:
+LEDON	gpioledapp.c	9;"	d	file:
+TARGET	Makefile	/^TARGET = atomic$/;"	m
+__this_module	build/atomic.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__used	build/atomic.mod.c	/^__used$/;"	v	file:
+__used	build/atomic.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+cdev	atomic.c	/^	struct cdev cdev;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::cdev	file:
+class	atomic.c	/^	struct class *class;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::class	file:
+device	atomic.c	/^	struct device *device;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::device	file:
+devid	atomic.c	/^	dev_t devid;$/;"	m	struct:gpioled_dev	file:
+flag	.config/ycm_flag.py	/^flag = [ $/;"	v
+gpioled	atomic.c	/^struct gpioled_dev gpioled;$/;"	v	typeref:struct:gpioled_dev
+gpioled_dev	atomic.c	/^struct gpioled_dev$/;"	s	file:
+led_exit	atomic.c	/^module_exit(led_exit);$/;"	v
+led_exit	atomic.c	/^static void __exit led_exit(void)$/;"	f	file:
+led_fops	atomic.c	/^static const struct file_operations led_fops = {$/;"	v	typeref:struct:file_operations	file:
+led_gpio	atomic.c	/^	int led_gpio;$/;"	m	struct:gpioled_dev	file:
+led_init	atomic.c	/^module_init(led_init);$/;"	v
+led_init	atomic.c	/^static int __init led_init(void)$/;"	f	file:
+led_open	atomic.c	/^static int led_open(struct inode *inode, struct file *filp)$/;"	f	file:
+led_release	atomic.c	/^static int led_release(struct inode *inode, struct file *filp)$/;"	f	file:
+led_write	atomic.c	/^static ssize_t led_write(struct file *filp, const char __user *buf, size_t count, loff_t *ppos)$/;"	f	file:
+lock	atomic.c	/^	atomic_t lock; \/* 原子操作， *\/$/;"	m	struct:gpioled_dev	file:
+main	gpioledapp.c	/^int main(int argc, char *argv[])$/;"	f
+major	atomic.c	/^	int major;$/;"	m	struct:gpioled_dev	file:
+minor	atomic.c	/^	int minor;$/;"	m	struct:gpioled_dev	file:
+nd	atomic.c	/^	struct device_node *nd;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::device_node	file:
+obj-m	Makefile	/^obj-m := $(TARGET).o$/;"	m
+ycm_flags	.config/config_mk.py	/^ycm_flags = [$/;"	v
