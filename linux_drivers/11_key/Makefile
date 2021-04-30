@@ -1,4 +1,4 @@
-TARGET = spinlock
+TARGET = key
 
 KERNELDIR := /home/user/linux/IMX6ULL/linux/linux_nxp_mine
 

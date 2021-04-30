@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUILD_DIR	Makefile	/^BUILD_DIR := build$/;"	m
+CC	Makefile	/^CC := arm-linux-gnueabihf-gcc$/;"	m
+CURRENT_PATH	Makefile	/^CURRENT_PATH := $(shell pwd)$/;"	m
+GPIOLED_CNT	semaphore.c	38;"	d	file:
+GPIOLED_NAME	semaphore.c	39;"	d	file:
+KERNELDIR	Makefile	/^KERNELDIR := \/home\/user\/linux\/IMX6ULL\/linux\/linux_nxp_mine$/;"	m
+LEDOFF	semaphore.c	41;"	d	file:
+LEDOFF	semaphoreapp.c	10;"	d	file:
+LEDON	semaphore.c	42;"	d	file:
+LEDON	semaphoreapp.c	9;"	d	file:
+TARGET	Makefile	/^TARGET = semphore$/;"	m
+cdev	semaphore.c	/^	struct cdev cdev;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::cdev	file:
+class	semaphore.c	/^	struct class *class;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::class	file:
+device	semaphore.c	/^	struct device *device;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::device	file:
+devid	semaphore.c	/^	dev_t devid;$/;"	m	struct:gpioled_dev	file:
+flag	.config/ycm_flag.py	/^flag = [ $/;"	v
+gpioled	semaphore.c	/^struct gpioled_dev gpioled;$/;"	v	typeref:struct:gpioled_dev
+gpioled_dev	semaphore.c	/^struct gpioled_dev$/;"	s	file:
+led_exit	semaphore.c	/^module_exit(led_exit);$/;"	v
+led_exit	semaphore.c	/^static void __exit led_exit(void)$/;"	f	file:
+led_fops	semaphore.c	/^static const struct file_operations led_fops = {$/;"	v	typeref:struct:file_operations	file:
+led_gpio	semaphore.c	/^	int led_gpio;$/;"	m	struct:gpioled_dev	file:
+led_init	semaphore.c	/^module_init(led_init);$/;"	v
+led_init	semaphore.c	/^static int __init led_init(void)$/;"	f	file:
+led_open	semaphore.c	/^static int led_open(struct inode *inode, struct file *filp)$/;"	f	file:
+led_release	semaphore.c	/^static int led_release(struct inode *inode, struct file *filp)$/;"	f	file:
+led_write	semaphore.c	/^static ssize_t led_write(struct file *filp, const char __user *buf, size_t count, loff_t *ppos)$/;"	f	file:
+main	semaphoreapp.c	/^int main(int argc, char *argv[])$/;"	f
+major	semaphore.c	/^	int major;$/;"	m	struct:gpioled_dev	file:
+minor	semaphore.c	/^	int minor;$/;"	m	struct:gpioled_dev	file:
+nd	semaphore.c	/^	struct device_node *nd;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::device_node	file:
+obj-m	Makefile	/^obj-m := $(TARGET).o$/;"	m
+sem	semaphore.c	/^	struct semaphore sem;$/;"	m	struct:gpioled_dev	typeref:struct:gpioled_dev::semaphore	file:
+ycm_flags	.config/config_mk.py	/^ycm_flags = [$/;"	v

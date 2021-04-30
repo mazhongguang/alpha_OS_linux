@@ -1,4 +1,4 @@
-TARGET = spinlock
+TARGET = semaphore
 
 KERNELDIR := /home/user/linux/IMX6ULL/linux/linux_nxp_mine
 

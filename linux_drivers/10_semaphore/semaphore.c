@@ -4,6 +4,7 @@
 #include "linux/err.h"
 #include "linux/gfp.h"
 #include "linux/mod_devicetable.h"
+#include "linux/mutex.h"
 #include "linux/pid.h"
 #include "linux/pm.h"
 #include <linux/compiler.h>
@@ -27,6 +28,9 @@
 #include <linux/slab.h>
 #include "linux/property.h"
 #include "linux/rcupdate.h"
+#include "linux/semaphore.h"
+#include "linux/spinlock.h"
+#include "linux/spinlock_types.h"
 #include "linux/workqueue.h"
 #include "linux/gpio.h"
 #include "linux/of_gpio.h"
@@ -50,7 +54,8 @@ struct gpioled_dev
 	struct device_node *nd;
 	int led_gpio;
 
-	atomic_t lock; /* 原子操作， */
+	struct semaphore sem;
+	struct mutex mutex;
 };
 
 /* LED */
@@ -60,23 +65,9 @@ static int led_open(struct inode *inode, struct file *filp)
 {
 	filp->private_data = &gpioled;
 
-	/* 判断lock */
-	if (!atomic_dec_and_test(&gpioled.lock))	/* 不能使用驱动 */
-	{
-		atomic_inc(&gpioled.lock);
-		return -EBUSY;
-	}
-#if 0
-	if (atomic_read(&gpioled.lock) <= 0)
-	{
-		return -EBUSY;
-	}
-	else
-	{
-		atomic_dec(&gpioled.lock);
-	}
-#endif
-
+	/*down(&gpioled.sem); [> 获取信号量 <]*/
+	mutex_lock(&gpioled.mutex);
+	
 
 	return 0;
 }
@@ -85,7 +76,9 @@ static int led_release(struct inode *inode, struct file *filp)
 {
 	struct gpioled_dev *dev = filp->private_data;
 
-	atomic_inc(&dev->lock);
+	/* release sem */
+	/*up(&dev->sem);*/
+	mutex_unlock(&dev->mutex);
 
 	return 0;
 }
@@ -127,8 +120,9 @@ static int __init led_init(void)
 {
 	int result;
 
-	/* 初始化原子变量 */
-	atomic_set(&gpioled.lock, 1);
+	/* 初始化信号量 */
+	/*sema_init(&gpioled.sem, 1);*/
+	mutex_init(&gpioled.mutex);
 
 	gpioled.major = 0;
 	if (gpioled.major)
