@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BEEPOFF	beep.c	38;"	d	file:
+BEEPON	beep.c	39;"	d	file:
+BEEP_CNT	beep.c	35;"	d	file:
+BEEP_NAME	beep.c	36;"	d	file:
+BUILD_DIR	Makefile	/^BUILD_DIR := build$/;"	m
+CC	Makefile	/^CC := arm-linux-gnueabihf-gcc$/;"	m
+CURRENT_PATH	Makefile	/^CURRENT_PATH := $(shell pwd)$/;"	m
+KERNELDIR	Makefile	/^KERNELDIR := \/home\/user\/linux\/IMX6ULL\/linux\/linux_nxp_mine$/;"	m
+LEDOFF	beepapp.c	10;"	d	file:
+LEDON	beepapp.c	9;"	d	file:
+TARGET	Makefile	/^TARGET = beep$/;"	m
+__this_module	build/beep.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__used	build/beep.mod.c	/^__used$/;"	v	file:
+__used	build/beep.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+beep	beep.c	/^struct beep_dev beep;$/;"	v	typeref:struct:beep_dev
+beep_dev	beep.c	/^struct beep_dev$/;"	s	file:
+beep_exit	beep.c	/^module_exit(beep_exit);$/;"	v
+beep_exit	beep.c	/^static void __exit beep_exit(void)$/;"	f	file:
+beep_fops	beep.c	/^static const struct file_operations beep_fops = {$/;"	v	typeref:struct:file_operations	file:
+beep_gpio	beep.c	/^	int beep_gpio;$/;"	m	struct:beep_dev	file:
+beep_init	beep.c	/^module_init(beep_init);$/;"	v
+beep_init	beep.c	/^static int __init beep_init(void)$/;"	f	file:
+beep_open	beep.c	/^static int beep_open(struct inode *inode, struct file *filp)$/;"	f	file:
+beep_release	beep.c	/^static int beep_release(struct inode *inode, struct file *filp)$/;"	f	file:
+beep_write	beep.c	/^static ssize_t beep_write(struct file *filp, const char __user *buf, size_t count, loff_t *ppos)$/;"	f	file:
+cdev	beep.c	/^	struct cdev cdev;$/;"	m	struct:beep_dev	typeref:struct:beep_dev::cdev	file:
+class	beep.c	/^	struct class *class;$/;"	m	struct:beep_dev	typeref:struct:beep_dev::class	file:
+device	beep.c	/^	struct device *device;$/;"	m	struct:beep_dev	typeref:struct:beep_dev::device	file:
+devid	beep.c	/^	dev_t devid;$/;"	m	struct:beep_dev	file:
+flag	.config/ycm_flag.py	/^flag = [ $/;"	v
+main	beepapp.c	/^int main(int argc, char *argv[])$/;"	f
+major	beep.c	/^	int major;$/;"	m	struct:beep_dev	file:
+minor	beep.c	/^	int minor;$/;"	m	struct:beep_dev	file:
+nd	beep.c	/^	struct device_node *nd;$/;"	m	struct:beep_dev	typeref:struct:beep_dev::device_node	file:
+obj-m	Makefile	/^obj-m := $(TARGET).o$/;"	m
+ycm_flags	.config/config_mk.py	/^ycm_flags = [$/;"	v
