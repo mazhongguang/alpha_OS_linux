@@ -1,0 +1,113 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUILD_DIR	Makefile	/^BUILD_DIR := build$/;"	m
+CC	Makefile	/^CC := arm-linux-gnueabihf-gcc$/;"	m
+CLOSE_CMD	irqapp.c	13;"	d	file:
+CURRENT_PATH	Makefile	/^CURRENT_PATH := $(shell pwd)$/;"	m
+INVAKEY	irq.c	45;"	d	file:
+INVAKEY	irqapp.c	11;"	d	file:
+INVAKEY	work.c	47;"	d	file:
+IRQ_CNT	irq.c	42;"	d	file:
+IRQ_CNT	work.c	44;"	d	file:
+IRQ_NAME	irq.c	43;"	d	file:
+IRQ_NAME	work.c	45;"	d	file:
+KERNELDIR	Makefile	/^KERNELDIR := \/home\/user\/linux\/IMX6ULL\/linux\/linux_nxp_mine$/;"	m
+KEY0VALUE	irq.c	44;"	d	file:
+KEY0VALUE	irqapp.c	10;"	d	file:
+KEY0VALUE	work.c	46;"	d	file:
+KEY_NUM	irq.c	46;"	d	file:
+KEY_NUM	work.c	48;"	d	file:
+OPEN_CMD	irqapp.c	14;"	d	file:
+SETPERIOD_CMD	irqapp.c	15;"	d	file:
+TARGET	Makefile	/^TARGET = blockio$/;"	m
+TIMER_CNT	irq_temp.c	34;"	d	file:
+TIMER_NAME	irq_temp.c	35;"	d	file:
+cdev	irq.c	/^	struct cdev cdev;$/;"	m	struct:irq_dev	typeref:struct:irq_dev::cdev	file:
+cdev	irq_temp.c	/^	struct cdev cdev;$/;"	m	struct:timer_dev	typeref:struct:timer_dev::cdev	file:
+cdev	work.c	/^	struct cdev cdev;$/;"	m	struct:irq_dev	typeref:struct:irq_dev::cdev	file:
+class	irq.c	/^	struct class *class;$/;"	m	struct:irq_dev	typeref:struct:irq_dev::class	file:
+class	irq_temp.c	/^	struct class *class;$/;"	m	struct:timer_dev	typeref:struct:timer_dev::class	file:
+class	work.c	/^	struct class *class;$/;"	m	struct:irq_dev	typeref:struct:irq_dev::class	file:
+curkeynum	irq.c	/^	unsigned char curkeynum;	\/* 当前的按键号 *\/$/;"	m	struct:irq_dev	file:
+curkeynum	work.c	/^	unsigned char curkeynum;	\/* 当前的按键号 *\/$/;"	m	struct:irq_dev	file:
+device	irq.c	/^	struct device *device;$/;"	m	struct:irq_dev	typeref:struct:irq_dev::device	file:
+device	irq_temp.c	/^	struct device *device;$/;"	m	struct:timer_dev	typeref:struct:timer_dev::device	file:
+device	work.c	/^	struct device *device;$/;"	m	struct:irq_dev	typeref:struct:irq_dev::device	file:
+devid	irq.c	/^	dev_t devid;$/;"	m	struct:irq_dev	file:
+devid	irq_temp.c	/^	dev_t devid;$/;"	m	struct:timer_dev	file:
+devid	work.c	/^	dev_t devid;$/;"	m	struct:irq_dev	file:
+flag	.config/ycm_flag.py	/^flag = [ $/;"	v
+gpio	irq.c	/^	int gpio;				\/* GPIO *\/$/;"	m	struct:irq_keydesc	file:
+gpio	work.c	/^	int gpio;				\/* GPIO *\/$/;"	m	struct:irq_keydesc	file:
+handler	irq.c	/^	irqreturn_t (*handler)(int, void *);	\/* 中断服务函数 *\/$/;"	m	struct:irq_keydesc	file:
+handler	work.c	/^	irqreturn_t (*handler)(int, void *);	\/* 中断服务函数 *\/$/;"	m	struct:irq_keydesc	file:
+imx6uirq_exit	irq.c	/^module_exit(imx6uirq_exit);$/;"	v
+imx6uirq_exit	irq.c	/^static void __exit imx6uirq_exit(void)$/;"	f	file:
+imx6uirq_exit	work.c	/^module_exit(imx6uirq_exit);$/;"	v
+imx6uirq_exit	work.c	/^static void __exit imx6uirq_exit(void)$/;"	f	file:
+imx6uirq_init	irq.c	/^module_init(imx6uirq_init);$/;"	v
+imx6uirq_init	irq.c	/^static int __init imx6uirq_init(void)$/;"	f	file:
+imx6uirq_init	work.c	/^module_init(imx6uirq_init);$/;"	v
+imx6uirq_init	work.c	/^static int __init imx6uirq_init(void)$/;"	f	file:
+irq_dev	irq.c	/^struct irq_dev$/;"	s	file:
+irq_dev	work.c	/^struct irq_dev$/;"	s	file:
+irq_fops	irq.c	/^static struct file_operations irq_fops = $/;"	v	typeref:struct:file_operations	file:
+irq_fops	work.c	/^static struct file_operations irq_fops = $/;"	v	typeref:struct:file_operations	file:
+irq_keydesc	irq.c	/^struct irq_keydesc$/;"	s	file:
+irq_keydesc	work.c	/^struct irq_keydesc$/;"	s	file:
+irq_open	irq.c	/^static int irq_open(struct inode *inode, struct file *file)$/;"	f	file:
+irq_open	work.c	/^static int irq_open(struct inode *inode, struct file *file)$/;"	f	file:
+irq_read	irq.c	/^static ssize_t irq_read(struct file *file, char __user *buf, size_t cnt, loff_t *offt)$/;"	f	file:
+irq_read	work.c	/^static ssize_t irq_read(struct file *file, char __user *buf, size_t cnt, loff_t *offt)$/;"	f	file:
+irqdev	irq.c	/^struct irq_dev irqdev;$/;"	v	typeref:struct:irq_dev
+irqdev	work.c	/^struct irq_dev irqdev;$/;"	v	typeref:struct:irq_dev
+irqkeydesc	irq.c	/^	struct irq_keydesc irqkeydesc[KEY_NUM]; \/* 按键描述数组 *\/$/;"	m	struct:irq_dev	typeref:struct:irq_dev::irq_keydesc	file:
+irqkeydesc	work.c	/^	struct irq_keydesc irqkeydesc[KEY_NUM]; \/* 按键描述数组 *\/$/;"	m	struct:irq_dev	typeref:struct:irq_dev::irq_keydesc	file:
+irqnum	irq.c	/^	int irqnum;				\/* 中断号 *\/$/;"	m	struct:irq_keydesc	file:
+irqnum	work.c	/^	int irqnum;				\/* 中断号 *\/$/;"	m	struct:irq_keydesc	file:
+key0_handler	irq.c	/^static irqreturn_t key0_handler(int irq, void *dev_id)$/;"	f	file:
+key0_handler	work.c	/^static irqreturn_t key0_handler(int irq, void *dev_id)$/;"	f	file:
+key_init	irq.c	/^static int key_init(struct irq_dev *dev_id)$/;"	f	file:
+key_init	work.c	/^static int key_init(struct irq_dev *dev_id)$/;"	f	file:
+key_tasklet	work.c	/^static void key_tasklet(unsigned long data)$/;"	f	file:
+key_work	work.c	/^static void key_work(struct work_struct *work)$/;"	f	file:
+keyvalue	irq.c	/^	atomic_t keyvalue; \/* 有效按键键值 *\/$/;"	m	struct:irq_dev	file:
+keyvalue	work.c	/^	atomic_t keyvalue; \/* 有效按键键值 *\/$/;"	m	struct:irq_dev	file:
+main	irqapp.c	/^int main(int argc, char *argv[])$/;"	f
+major	irq.c	/^	int major;$/;"	m	struct:irq_dev	file:
+major	irq_temp.c	/^	int major;$/;"	m	struct:timer_dev	file:
+major	work.c	/^	int major;$/;"	m	struct:irq_dev	file:
+minor	irq.c	/^	int minor;$/;"	m	struct:irq_dev	file:
+minor	irq_temp.c	/^	int minor;$/;"	m	struct:timer_dev	file:
+minor	work.c	/^	int minor;$/;"	m	struct:irq_dev	file:
+name	irq.c	/^	char name[10];			\/* 名字 *\/$/;"	m	struct:irq_keydesc	file:
+name	work.c	/^	char name[10];			\/* 名字 *\/$/;"	m	struct:irq_keydesc	file:
+nd	irq.c	/^	struct device_node *nd;$/;"	m	struct:irq_dev	typeref:struct:irq_dev::device_node	file:
+nd	irq_temp.c	/^	struct device_node *nd;$/;"	m	struct:timer_dev	typeref:struct:timer_dev::device_node	file:
+nd	work.c	/^	struct device_node *nd;$/;"	m	struct:irq_dev	typeref:struct:irq_dev::device_node	file:
+obj-m	Makefile	/^obj-m := $(TARGET).o $/;"	m
+r_wait	work.c	/^	wait_queue_head_t r_wait;	\/* 读等待队列头 *\/$/;"	m	struct:irq_dev	file:
+releasekey	irq.c	/^	atomic_t releasekey; \/* 标记是否完成一次完整的按键，包括按下和释放 *\/$/;"	m	struct:irq_dev	file:
+releasekey	work.c	/^	atomic_t releasekey; \/* 标记是否完成一次完整的按键，包括按下和释放 *\/$/;"	m	struct:irq_dev	file:
+timer	irq.c	/^	struct timer_list timer; \/* 定时器 *\/$/;"	m	struct:irq_dev	typeref:struct:irq_dev::timer_list	file:
+timer	work.c	/^	struct timer_list timer; \/* 定时器 *\/$/;"	m	struct:irq_dev	typeref:struct:irq_dev::timer_list	file:
+timer_dev	irq_temp.c	/^struct timer_dev$/;"	s	file:
+timer_exit	irq_temp.c	/^module_exit(timer_exit);$/;"	v
+timer_exit	irq_temp.c	/^static void __exit timer_exit(void)$/;"	f	file:
+timer_fops	irq_temp.c	/^static const struct file_operations timer_fops = {$/;"	v	typeref:struct:file_operations	file:
+timer_func	irq.c	/^static void timer_func(unsigned long arg)$/;"	f	file:
+timer_func	work.c	/^static void timer_func(unsigned long arg)$/;"	f	file:
+timer_init	irq_temp.c	/^module_init(timer_init);$/;"	v
+timer_init	irq_temp.c	/^static int __init timer_init(void)$/;"	f	file:
+timer_open	irq_temp.c	/^static int timer_open(struct inode *inode, struct file *filp)$/;"	f	file:
+timer_read	irq_temp.c	/^static ssize_t timer_read(struct file *file, char __user *buf, size_t count, loff_t *ppos)$/;"	f	file:
+timer_release	irq_temp.c	/^static int timer_release(struct inode *inode, struct file *filp)$/;"	f	file:
+timer_write	irq_temp.c	/^static ssize_t timer_write(struct file *filp, const char __user *buf, size_t count, loff_t *ppos)$/;"	f	file:
+timerdev	irq_temp.c	/^struct timer_dev timerdev;$/;"	v	typeref:struct:timer_dev
+value	irq.c	/^	unsigned char value;	\/* 按键对应的键值 *\/$/;"	m	struct:irq_keydesc	file:
+value	work.c	/^	unsigned char value;	\/* 按键对应的键值 *\/$/;"	m	struct:irq_keydesc	file:
+ycm_flags	.config/config_mk.py	/^ycm_flags = [$/;"	v

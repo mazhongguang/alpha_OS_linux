@@ -181,10 +181,14 @@
 	/* mazhongguang key 2021/04/30 */
 	key
 	{
+		#address-cells = <1>;
+		#size-cells = <1>;
 		compatible = "myself, key";
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_key>;
 		key-gpios = <&gpio1 18 GPIO_ACTIVE_HIGH>;
+		interrupt-parent = <&gpio1>;
+		interrupts = <18 IRQ_TYPE_EDGE_BOTH>;
 		status = "okay";
 	};
 
